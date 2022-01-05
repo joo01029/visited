@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.visited.visited.mapper.BoardMapper">
+    <resultMap id="simpleBoardMap" type="com.visited.visited.model.res.board.SimpleBoardDto">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="view" column="view"/>
+    </resultMap>
+
+    <select id="getAllBoard" resultMap="simpleBoardMap">
+        SELECT b.id as id, b.title as title, count(v.*) as "view"
+        FROM board b
+        LEFT JOIN visited v
+        ON b.id = v.board_id
+        GROUP BY b.id;
+    </select>
+
+    <insert id="insertBoard" parameterType="com.visited.visited.model.req.board.InsertBoardDto">
+        INSERT INTO board (id,title,content) VALUES (null,#{title},#{content})
+    </insert>
+</mapper>
