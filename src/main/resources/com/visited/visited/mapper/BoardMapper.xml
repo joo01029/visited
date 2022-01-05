@@ -10,7 +10,7 @@
     </resultMap>
 
     <select id="getAllBoard" resultMap="simpleBoardMap">
-        SELECT b.id as id, b.title as title, count(v.*) as "view"
+        SELECT b.id as id, b.title as title, count(v.id) as "view"
         FROM board b
         LEFT JOIN visited v
         ON b.id = v.board_id
