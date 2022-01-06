@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:each="board: ${boards}">
+    <div class="body" id="${board.id}">
+        <span th:text="${board.title}"></span>
+        <span th:text="${board.view}"></span>
+    </div>
+</th:block>
+</body>
+</html>
