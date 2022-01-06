@@ -1,6 +1,7 @@
 package com.visited.visited.mapper;
 
 import com.visited.visited.model.req.board.InsertBoardDto;
+import com.visited.visited.model.res.board.DetailBoardDto;
 import com.visited.visited.model.res.board.SimpleBoardDto;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,4 +11,5 @@ import java.util.List;
 public interface BoardMapper {
 	List<SimpleBoardDto> getAllBoard();
 	void insertBoard(InsertBoardDto insertBoardDto);
+	DetailBoardDto getBoard(Long boardId);
 }

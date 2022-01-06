@@ -6,10 +6,12 @@
 </head>
 <body>
 <th:block th:each="board: ${boards}">
-    <div class="body" id="${board.id}">
-        <span th:text="${board.title}"></span>
-        <span th:text="${board.view}"></span>
-    </div>
+    <a th:href="@{/board/{id}(id=${board.id}) }">
+        <div class="body" th:id="${board.id}">
+            <span th:text="${board.title}"></span>
+            <span th:text="${board.view}"></span>
+        </div>
+    </a>
 </th:block>
 </body>
 </html>

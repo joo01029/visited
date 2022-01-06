@@ -2,6 +2,7 @@ package com.visited.visited.controller;
 
 import com.visited.visited.model.req.board.InsertBoardDto;
 import com.visited.visited.model.res.Response;
+import com.visited.visited.model.res.board.DetailBoardDto;
 import com.visited.visited.model.res.board.SimpleBoardDto;
 import com.visited.visited.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -28,5 +29,11 @@ public class BoardController {
 		List<SimpleBoardDto> boards = boardService.getBoards();
 		model.addAttribute("boards", boards);
 		return "main";
+	}
+	@GetMapping("/{boardId}")
+	public String mainPage(Model model, @PathVariable Long boardId){
+		DetailBoardDto board = boardService.getBoard(boardId);
+		model.addAttribute("board", board);
+		return "detail";
 	}
 }

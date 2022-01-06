@@ -9,6 +9,13 @@
         <result property="view" column="view"/>
     </resultMap>
 
+    <resultMap id="detailBoardMap" type="com.visited.visited.model.res.board.DetailBoardDto">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="view" column="view"/>
+    </resultMap>
+
     <select id="getAllBoard" resultMap="simpleBoardMap">
         SELECT b.id as id, b.title as title, count(v.id) as "view"
         FROM board b
@@ -17,6 +24,14 @@
         GROUP BY b.id;
     </select>
 
+    <select id="getBoard" resultMap="detailBoardMap">
+        SELECT b.id as id, b.title as title, b.content as content, count(v.id) as "view"
+        FROM board b
+        LEFT JOIN visited v
+        ON b.id = v.board_id
+        WHERE b.id = #{boardId}
+        GROUP BY b.id;
+    </select>
     <insert id="insertBoard" parameterType="com.visited.visited.model.req.board.InsertBoardDto">
         INSERT INTO board (id,title,content) VALUES (null,#{title},#{content})
     </insert>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="body" th:id="${board.id}">
+    <span th:text="${board.title}"></span>
+    <span th:text="${board.content}"></span>
+    <span th:text="${board.view}"></span>
+</div>
+</body>
+</html>
