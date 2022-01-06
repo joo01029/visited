@@ -1,6 +1,8 @@
 package com.visited.visited.service;
 
 import com.visited.visited.mapper.BoardMapper;
+import com.visited.visited.model.entity.Visit;
+import com.visited.visited.model.repository.VisitRedisRepository;
 import com.visited.visited.model.req.board.InsertBoardDto;
 import com.visited.visited.model.res.board.DetailBoardDto;
 import com.visited.visited.model.res.board.SimpleBoardDto;
@@ -13,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BoardService {
 	private final BoardMapper boardMapper;
+	private final VisitRedisRepository visitRedisRepository;
 
 	public void insertBoard(InsertBoardDto insertBoardDto){
 		boardMapper.insertBoard(insertBoardDto);
@@ -23,6 +26,8 @@ public class BoardService {
 	}
 
 	public DetailBoardDto getBoard(Long boardId){
+		Visit visit = new Visit(boardId);
+		visitRedisRepository.save(visit);
 		return boardMapper.getBoard(boardId);
 	}
 }
