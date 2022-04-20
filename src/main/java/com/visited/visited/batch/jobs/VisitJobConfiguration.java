@@ -42,9 +42,14 @@ public class VisitJobConfiguration {
 							if(visit != null && visit.getBoardId() != null) {
 								System.out.println(visit.toString());
 								visitMapper.saveVisit(visit);
+
+								visit.setSaved();
+								visitRedisRepository.save(visit);
 							}
 						}
-						visitRedisRepository.deleteAll();
+
+						visitRedisRepository.deleteByIsSaved(true);
+
 						return RepeatStatus.FINISHED;
 					}catch (Exception e){
 						e.printStackTrace();
@@ -53,4 +58,6 @@ public class VisitJobConfiguration {
 
 				})).build();
 	}
+
+
 }

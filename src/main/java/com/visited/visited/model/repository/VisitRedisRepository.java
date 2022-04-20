@@ -4,5 +4,5 @@ import com.visited.visited.model.entity.Visit;
 import org.springframework.data.repository.CrudRepository;
 
 public interface VisitRedisRepository extends CrudRepository<Visit, String> {
-
+	void deleteByIsSaved(Boolean isSaved);
 }

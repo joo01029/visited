@@ -17,7 +17,7 @@ public class VisitScheduler {
 	private final Job saveVisitedJob;
 	private final JobLauncher jobLauncher;
 
-	@Scheduled(fixedDelay = 5*60*1000L)
+	@Scheduled(fixedDelay = 1*60*1000L)
 	public void executeSaveVisitedJob(){
 		try{
 			JobParameters taskStartedTime = new JobParametersBuilder()

@@ -15,9 +15,14 @@ public class Visit {
 	private String id;
 	private Long boardId;
 	private LocalDateTime createAt;
+	private Boolean isSaved = false;
 
 	public Visit(Long boardId){
 		this.boardId = boardId;
 		this.createAt = LocalDateTime.now();
+	}
+
+	public void setSaved(){
+		this.isSaved = true;
 	}
 }
