@@ -1,8 +1,6 @@
 package com.hello.visited.data
 
-import org.springframework.data.repository.CrudRepository
-import org.springframework.stereotype.Repository
+import org.springframework.data.jpa.repository.JpaRepository
 
-@Repository
-interface BoardRepo : CrudRepository<Board, Long> {
+interface BoardRepo : JpaRepository<Board, Long> {
 }

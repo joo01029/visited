@@ -1,8 +1,6 @@
 package com.hello.visited.data
 
-import org.springframework.data.repository.CrudRepository
-import org.springframework.stereotype.Repository
+import org.springframework.data.jpa.repository.JpaRepository
 
-interface UserRepo : CrudRepository<User, Long> {
-    fun findByName(name:String):User?
+interface UserRepo : JpaRepository<User, Long> {
 }

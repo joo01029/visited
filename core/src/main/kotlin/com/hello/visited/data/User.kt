@@ -10,13 +10,13 @@ import javax.persistence.OneToMany
 @Entity
 data class User (
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id:Long? = null,
 
     @Column(unique = true, nullable = false)
     val name: String,
 
     @OneToMany(mappedBy = "user")
-    val boards: MutableList<Board>
+    val Board:List<Board>
 
 ):BaseEntity()
