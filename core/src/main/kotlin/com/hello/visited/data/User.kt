@@ -17,6 +17,6 @@ data class User (
     val name: String,
 
     @OneToMany(mappedBy = "user")
-    val Board:List<Board>
+    val boards:List<Board>
 
 ):BaseEntity()
