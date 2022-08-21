@@ -7,6 +7,7 @@ import javax.persistence.Column
 import javax.persistence.MappedSuperclass
 
 @MappedSuperclass
+
 abstract class BaseEntity {
 
     @CreationTimestamp
