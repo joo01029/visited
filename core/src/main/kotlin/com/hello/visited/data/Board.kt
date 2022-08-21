@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne
 @Entity
 data class Board (
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 
     @Column(nullable = false)
