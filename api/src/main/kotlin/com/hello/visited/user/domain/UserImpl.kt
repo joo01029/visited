@@ -9,7 +9,7 @@ class UserImpl  (
     private val userRepo: UserRepo
         ) {
     fun getUser(userName:String):User{
-        var user : User? =  userRepo.findByName(name = userName)
+        var user : User? =  userRepo.findByName(userName)
         if(user == null){
             user = User(name = userName, boards = mutableListOf())
             user = userRepo.save(user)

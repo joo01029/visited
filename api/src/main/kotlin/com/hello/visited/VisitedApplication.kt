@@ -5,7 +5,6 @@ import org.springframework.boot.runApplication
 
 @SpringBootApplication
 class VisitedApplication
-
 fun main(args: Array<String>) {
     runApplication<VisitedApplication>(*args)
 }
