@@ -1,4 +1,3 @@
-
 allOpen {
     annotation("javax.persistence.Entity")
     annotation("javax.persistence.MappedSuperclass")
@@ -6,12 +5,12 @@ allOpen {
 }
 
 dependencies{
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    runtimeOnly("com.h2database:h2")
+    api("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("com.h2database:h2")
 
-    implementation("com.querydsl:querydsl-jpa")
-    implementation("com.querydsl:querydsl-core")
-    kapt(group = "com.querydsl", name = "querydsl-apt", classifier = "jpa")
+//    implementation("com.querydsl:querydsl-jpa")
+//    implementation("com.querydsl:querydsl-core")
+//    kapt(group = "com.querydsl", name = "querydsl-apt", classifier = "jpa")
 }
 
 tasks.getByName("bootJar") {
