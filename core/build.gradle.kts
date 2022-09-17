@@ -6,7 +6,7 @@ allOpen {
 
 dependencies{
     api("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("com.h2database:h2")
+    implementation("mysql:mysql-connector-java")
 
 //    implementation("com.querydsl:querydsl-jpa")
 //    implementation("com.querydsl:querydsl-core")

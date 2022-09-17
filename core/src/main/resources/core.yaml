@@ -11,11 +11,7 @@ spring:
           batch_size: 1000
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:~/test
+    url: jdbc:mysql://localhost:3306/visited?serverTimezone=UTC"
     username: sa
-  h2:
-    console:
-      path: /h2-console
-      enabled: true
 
 
