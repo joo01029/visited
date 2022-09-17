@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component
 @Component
 class UserImpl  (
     private val userRepo: UserRepo
-        ) {
-    fun getUser(userName:String):User{
-        var user : User? =  userRepo.findByName(userName)
-        if(user == null){
-            user = User(name = userName, boards = mutableListOf<Board>())
-            user = userRepo.save(user)
-        }
-        return user
+) {
+    fun getUser(userName:String):User?{
+        return userRepo.findByName(userName)
+    }
+
+    fun saveUser(userName: String) : User{
+        val user = User(name = userName, boards = mutableListOf<Board>())
+        return userRepo.save(user)
     }
 }
