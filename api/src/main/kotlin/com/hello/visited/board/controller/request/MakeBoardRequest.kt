@@ -1,7 +1,7 @@
 package com.hello.visited.board.controller
 
-import com.hello.visited.board.domain.BoardDto
-import com.hello.visited.user.domain.UserDto
+import com.hello.visited.board.domain.MakeBoardSource
+import com.hello.visited.user.domain.dto.inputs.UserSource
 import org.hibernate.validator.constraints.Length
 
 class MakeBoardRequest {
@@ -12,16 +12,16 @@ class MakeBoardRequest {
 
     var userName: String? = null
 
-    fun toBoardDto():BoardDto{
-        return BoardDto(
+    fun toMakeBoardSource(): MakeBoardSource {
+        return MakeBoardSource(
             title = this.title!!,
             content = this.content!!
         )
 
     }
 
-    fun toUserDto(): UserDto {
-        return UserDto(
+    fun toUserSource(): UserSource {
+        return UserSource(
             name = this.userName!!
         )
     }

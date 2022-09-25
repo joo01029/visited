@@ -1,6 +1,7 @@
 package com.hello.visited.board.controller
 
 import com.hello.visited.board.domain.BoardService
+import com.hello.visited.response.DefaultResponse
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -13,7 +14,8 @@ class BoardController (
     ) {
 
     @PostMapping
-    fun makeBoard(@Valid request : MakeBoardRequest){
-        boardService.makeBoard(request.toBoardDto(), request.toUserDto())
+    fun makeBoard(@Valid request : MakeBoardRequest): DefaultResponse<Nothing>{
+        boardService.makeBoard(request.toMakeBoardSource(), request.toUserSource())
+        return DefaultResponse.success()
     }
 }
