@@ -10,7 +10,7 @@ class BoardImpl (
     private val boardRepo: BoardRepo
 ){
 
-    fun saveBoard(board: BoardDto,user: User){
+    fun saveBoard(board: MakeBoardSource, user: User){
         val newBoard = Board(
             title = board.title,
             content = board.content,
