@@ -6,9 +6,9 @@ import com.hello.visited.data.User
 import org.springframework.stereotype.Component
 
 @Component
-class BoardImpl (
+class BoardWriter (
     private val boardRepo: BoardRepo
-){
+) {
 
     fun saveBoard(board: MakeBoardSource, user: User){
         val newBoard = Board(
