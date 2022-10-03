@@ -10,7 +10,7 @@ class MakeBoardRequest {
     @Length(min=2, max = 100, message = "내용은 2~100글자 사이로 만들어야 합니다.")
     var content: String? = null
 
-    var userName: String? = null
+    var userName: String = "none"
 
     fun toMakeBoardSource(): MakeBoardSource {
         return MakeBoardSource(
