@@ -7,10 +7,6 @@ allOpen {
 dependencies{
     api("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("mysql:mysql-connector-java")
-
-//    implementation("com.querydsl:querydsl-jpa")
-//    implementation("com.querydsl:querydsl-core")
-//    kapt(group = "com.querydsl", name = "querydsl-apt", classifier = "jpa")
 }
 
 tasks.getByName("bootJar") {

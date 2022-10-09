@@ -1,14 +1,16 @@
-package com.hello.visited.board.domain
+package com.hello.visited.close
 
+import com.hello.visited.board.domain.GetBoardResult
 import com.hello.visited.data.BoardRepo
+import com.hello.visited.open.BoardReader
 import org.springframework.stereotype.Component
 
 @Component
-class BoardReader(
+internal class BoardReaderImpl (
     private val boardRepo: BoardRepo
-) {
+): BoardReader {
 
-    fun getBoards():List<GetBoardResult>{
+    override fun getBoards():List<GetBoardResult>{
         val boards = boardRepo.findAll()
         return boards.map {
             GetBoardResult.make(it)

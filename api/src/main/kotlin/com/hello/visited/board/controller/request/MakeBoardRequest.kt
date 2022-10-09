@@ -1,7 +1,7 @@
 package com.hello.visited.board.controller
 
 import com.hello.visited.board.domain.MakeBoardSource
-import com.hello.visited.user.domain.dto.inputs.UserSource
+import com.hello.visited.open.inputs.UserSource
 import org.hibernate.validator.constraints.Length
 
 class MakeBoardRequest {

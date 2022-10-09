@@ -1,8 +1,8 @@
 val commonVersion: String by project
 
 dependencies {
-    implementation(project(":core"))
-
+    implementation(project(":domain:board"))
+    implementation(project(":domain:user"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
 }
