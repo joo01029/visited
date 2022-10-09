@@ -3,7 +3,9 @@ rootProject.name = "visited"
 include(
         "api",
         "core",
-        "batch"
+        "batch",
+        "domain:board",
+        "domain:user"
 )
 
 pluginManagement {
