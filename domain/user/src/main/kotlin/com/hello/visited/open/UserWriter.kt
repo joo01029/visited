@@ -4,5 +4,5 @@ import com.hello.visited.data.User
 import com.hello.visited.open.inputs.UserSource
 
 interface UserWriter {
-    fun saveUser(userSource: UserSource) : User
+    fun saveUser(userSource: UserSource): User
 }

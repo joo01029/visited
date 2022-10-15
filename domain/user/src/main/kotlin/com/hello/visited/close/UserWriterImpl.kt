@@ -8,10 +8,10 @@ import com.hello.visited.open.inputs.UserSource
 import org.springframework.stereotype.Component
 
 @Component
-class UserWriterImpl (
+class UserWriterImpl(
     private val userRepo: UserRepo
-) :UserWriter {
-    override fun saveUser(userSource: UserSource) : User {
+) : UserWriter {
+    override fun saveUser(userSource: UserSource): User {
         val user = User(name = userSource.name, boards = mutableListOf<Board>())
         return userRepo.save(user)
     }

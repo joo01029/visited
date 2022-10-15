@@ -13,5 +13,5 @@ class BoardService(
 ) {
     fun makeBoard(makeBoardSource: MakeBoardSource, userSource: UserSource) = boardWriter.saveBoard(makeBoardSource, userSource)
 
-    fun getBoards():List<GetBoardResult> = boardReader.getBoards()
+    fun getBoards(): List<GetBoardResult> = boardReader.getBoards()
 }

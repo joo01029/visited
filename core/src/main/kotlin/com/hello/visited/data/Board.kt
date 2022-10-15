@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
 
 @Entity
-data class Board (
+data class Board(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
@@ -22,4 +22,4 @@ data class Board (
     @ManyToOne
     @JoinColumn(name = "user_id")
     val user: User
-    ): BaseEntity()
+) : BaseEntity()
