@@ -6,11 +6,11 @@ import com.hello.visited.open.BoardReader
 import org.springframework.stereotype.Component
 
 @Component
-internal class BoardReaderImpl (
+internal class BoardReaderImpl(
     private val boardRepo: BoardRepo
-): BoardReader {
+) : BoardReader {
 
-    override fun getBoards():List<GetBoardResult>{
+    override fun getBoards(): List<GetBoardResult> {
         val boards = boardRepo.findAll()
         return boards.map {
             GetBoardResult.make(it)

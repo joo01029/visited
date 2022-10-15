@@ -7,11 +7,10 @@ import com.hello.visited.open.inputs.UserSource
 import org.springframework.stereotype.Component
 
 @Component
-class UserReaderImpl (
+class UserReaderImpl(
     private val userRepo: UserRepo
 ) : UserReader {
-    override fun getUser(userSource: UserSource): User?{
+    override fun getUser(userSource: UserSource): User? {
         return userRepo.findByName(userSource.name)
     }
-
 }
